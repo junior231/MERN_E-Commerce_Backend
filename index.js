@@ -7,6 +7,9 @@ const dotenv = require("dotenv");
 // import routes
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
+const productRoute = require("./routes/product");
+const cartRoute = require("./routes/cart");
+const orderRoute = require("./routes/order");
 
 // Loads .env file contents into process.env
 dotenv.config();
@@ -28,6 +31,9 @@ app.use(express.json());
 //connect routes to server
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
+app.use("/api/carts", cartRoute);
+app.use("/api/orders", orderRoute);
 
 // listen on port 5000
 app.listen(process.env.PORT || 5000, () => {
